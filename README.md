@@ -1,5 +1,5 @@
 # alpine-router
-Setup a simple home router in my home network.
+Setup a simple LAN router on a PC quickly with this script + Alpine.
 
 ## Requirements
 Install alpine with "setup-alpine"
