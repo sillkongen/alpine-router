@@ -10,6 +10,8 @@ Reboot, do apk update
 
 Then do git clone https://github.com/sillkongen/alpine-router.git
 
+Then cd alpine-router
+
 Then run sh setup_router.sh
 
 eth1 is your WAN port request an IP address via DHCP
