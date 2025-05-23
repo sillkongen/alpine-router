@@ -46,6 +46,8 @@ A secure and feature-rich router setup for Alpine Linux, providing NAT, DHCP, DN
 
 ## Installation
 
+### Option 1: Direct Installation
+
 1. Clone this repository:
    ```bash
    git clone https://github.com/yourusername/alpine-router.git
@@ -61,6 +63,50 @@ A secure and feature-rich router setup for Alpine Linux, providing NAT, DHCP, DN
    ```bash
    ./setup_router.sh
    ```
+
+### Option 2: Bootable USB Image
+
+For a complete automated installation, you can create a bootable USB image:
+
+1. Make the USB creator script executable:
+   ```bash
+   chmod +x create_alpine_usb.sh
+   ```
+
+2. Run the USB creator script:
+   ```bash
+   sudo ./create_alpine_usb.sh
+   ```
+
+3. Write the image to a USB drive:
+   ```bash
+   # First, find your USB device
+   lsblk
+   
+   # Then write the image (replace sdX with your USB device)
+   gunzip -c /tmp/alpine-usb/alpine-router.img.gz | sudo dd of=/dev/sdX bs=4M status=progress
+   ```
+
+4. Boot from the USB drive on your router hardware
+
+The USB image includes:
+- Alpine Linux Extended Edition
+- Automatic first-boot configuration
+- Router setup script
+- All necessary packages
+- Pre-configured boot parameters
+
+The system will automatically:
+1. Boot from the USB drive
+2. Update the system
+3. Clone the router repository
+4. Run the setup script
+5. Configure the router
+
+After the first boot completes, you can:
+1. Remove the USB drive
+2. Boot from the installed system
+3. The router will be fully configured and ready to use
 
 The script will:
 - Install required packages
